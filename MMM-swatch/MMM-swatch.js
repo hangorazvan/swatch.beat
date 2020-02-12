@@ -8,6 +8,10 @@ Module.register("MMM-swatch", {
         Log.info("Starting module: " + this.name);
 	},
 	
+	getScripts: function() {
+		return ["jquery.min.js"];
+	},
+	
 	getStyles: function() {
 		return ["MMM-swatch.css"];
 	},
