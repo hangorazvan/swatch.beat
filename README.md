@@ -1,5 +1,5 @@
 # swatch.beat
-swatch beat magic mirror 2 module
+Simple Swatch .beat Internet Time MagicMirror2 module
 
 <img src=https://github.com/hangorazvan/swatch.beat/raw/master/preview.png>
 
