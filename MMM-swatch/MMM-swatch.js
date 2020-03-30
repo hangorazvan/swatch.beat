@@ -1,3 +1,9 @@
+/* Magic Mirror 2
+*  Module: Swatch Internet Time
+*  by Razvan Cristea 
+*  https://github.com/hangorazvan
+*/
+
 Module.register("MMM-swatch", {
 
 	defaults: {
