@@ -14,12 +14,8 @@ Module.register("MMM-swatch", {
         Log.info("Starting module: " + this.name);
 	},
 	
-	getScripts: function() {
-		return ["jquery.min.js"];
-	},
-	
 	getStyles: function() {
-		return ["MMM-swatch.css"];
+		return [];
 	},
 
 	getDom: function() {
@@ -28,11 +24,11 @@ Module.register("MMM-swatch", {
             var h=d.getUTCHours()+1;
             var m=d.getUTCMinutes();
             var s=d.getUTCSeconds();
-            var time='@'+('000'+Math.floor((h*3600+m*60+s)/86.4)%1000).slice(-3);
-            $('.beat').html(time);
+            var time="@"+("000"+Math.floor((h*3600+m*60+s)/86.4)%1000).slice(3);
+            $(".beat").html(time);
         } setInterval(swatch,864);
 		var wrapper = document.createElement("div");
-		wrapper.innerHTML = this.config.beat;
+		wrapper.innerHTML = this.config.internetTime;
 		wrapper.className = "swatch";
 		return wrapper;
 	}
