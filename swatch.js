@@ -1,12 +1,16 @@
-Module.register("swatch", {
+Module.register("MMM-swatch", {
 
-	defaults: {},
+	defaults: {
+		beat: '<img class="logo" src="MMM-swatch.svg"></img>&nbsp; <span class="beat"></span>&nbsp; <img class="logo" src="MMM-beat.svg"></img>',
+	},
 	
 	start: function() {
         Log.info("Starting module: " + this.name);
 	},
 	
 	getScripts: function() {return ["moment.js", "jquery.min.js"];},
+	
+	getStyles: function() {return ["MMM-swatch.css"];},
 
 	getDom: function() {
 		function swatch(){
