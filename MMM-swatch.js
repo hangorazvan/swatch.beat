@@ -14,9 +14,9 @@ Module.register("MMM-swatch", {
         Log.info("Starting module: " + this.name);
 	},
 	
-	getStyles: function() {
-		return [];
-	},
+	getScripts: function() {return ["moment.js", "jquery.min.js"];},
+	
+	getStyles: function() {return ["MMM-swatch.css"];},
 
 	getDom: function() {
 		function swatch(){
