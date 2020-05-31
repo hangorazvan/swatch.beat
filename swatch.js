@@ -15,6 +15,10 @@ Module.register("swatch", {
 	getScripts: function() {
 		return ["moment.js"];
 	},
+
+	getStyles: function() {
+		return ["swatch.css"];
+	},
 	
 	getDom: function() {
 		function swatch(){
