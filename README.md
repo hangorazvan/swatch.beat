@@ -8,6 +8,6 @@ Instead of hours and minutes, the mean solar day is divided into 1000 parts call
 There are no time zones in Swatch Internet Time; instead, the new time scale of Biel Meantime (BMT) is used, based on Swatch's headquarters in Biel, Switzerland and equivalent to Central European Time, West Africa Time, and UTC+01. Unlike civil time in Switzerland and many other countries, Swatch Internet Time does not observe daylight saving time.
 
 <br>{
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;module: "MMM-swatch",
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;module: "swatch",
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: "top_left",
 <br>}
