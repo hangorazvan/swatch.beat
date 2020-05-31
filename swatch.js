@@ -11,9 +11,13 @@ Module.register("swatch", {
 	start: function() {
 		Log.info("Starting module: " + this.name);
 	},
+
+	getScripts: function() {
+		return ["moment.js"];
+	},
 	
 	getStyles: function() {
-		return 0;
+		return ["swatch.css"];
 	},
 
 	getDom: function() {
