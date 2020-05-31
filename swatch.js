@@ -16,17 +16,13 @@ Module.register("swatch", {
 		return ["moment.js"];
 	},
 	
-	getStyles: function() {
-		return ["swatch.css"];
-	},
-
 	getDom: function() {
 		function swatch(){
 			var d = new Date();
 			var h = d.getUTCHours() + 1;
 			var m = d.getUTCMinutes();
 			var s = d.getUTCSeconds();
-			var time = "@" + ("." + Math.floor((h * 3600 + m * 60 + s) / 86.4) / 1000).slice(-3);
+			var time = "@" + Math.floor((h * 3600 + m * 60 + s) / 86.4);
 			document.getElementsByClassName("beat")[0].innerHTML = time;
 		} setInterval(swatch, 864);
 		var wrapper = document.createElement("div");
