@@ -7,7 +7,7 @@
 Module.register("swatch", {
 
 	defaults: {
-		beat: "<img class=\"logo\" src=\"css/swatch.svg\"></img>&nbsp; <span class=\"beat\"></span>&nbsp; <img class=\"logo\" src=\"css/beat.svg\"></img>",
+		beat: "<img class=\"logo\" src=\"css/swatch.svg\"></img>&nbsp; <img class=\"logo\" src=\"css/beat.svg\"></img>&nbsp; <span class=\"beat\"></span>",
 	},
 	
 	start: function() {
@@ -19,7 +19,7 @@ Module.register("swatch", {
 	},
 
 	getStyles: function() {
-		return ["swatch.css"];
+		return [];
 	},
 	
 	getDom: function() {
