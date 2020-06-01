@@ -6,7 +6,9 @@
 
 Module.register("swatch", {
 
-	defaults: {},
+	defaults: {
+		beat: "<img class=\"logo\" src=\"css/swatch.svg\"></img>&nbsp; <span class=\"beat\"></span>&nbsp; <img class=\"logo\" src=\"css/beat.svg\"></img>",
+	},
 	
 	start: function() {
 		Log.info("Starting module: " + this.name);
