@@ -19,7 +19,7 @@ Module.register("swatch", {
 	},
 
 	getStyles: function() {
-		return [];
+		return ["swatch.css"];
 	},
 	
 	getDom: function() {
