@@ -1,29 +1,32 @@
-/*	Magic Mirror 2
- *	Module: Swatch
- *	by Razvan Cristea 
- *	https://github.com/hangorazvan
+/* Magic Mirror
+ *
+ * Redesigned by Răzvan Cristea
+ * for iPad 3 & HD display
+ *
+ * https://github.com/hangorazvan
+ * Creative Commons BY-NC-SA 4.0, Romania.
  */
-
 Module.register("swatch", {
 
 	defaults: {
-		beat: "<img class=\"logo\" src=\"css/swatch.svg\"></img>&nbsp; <img class=\"logo\" src=\"css/beat.svg\"></img>&nbsp; <span class=\"beat\"></span>",
-	},
-	
-	getScripts: function() {
-		return ["moment.js"];
+		beat: "<img class=\"logo\" src=\"modules/swatch/swatch.svg\"></img>&nbsp; <span class=\"beat\"></span> &nbsp;<img class=\"logo\" src=\"modules/swatch/beat.svg\"></img>"
 	},
 
-	getStyles: function() {
-		return [];
-	},
-	
+//	getScripts: function() {
+//		return ["moment.js"];
+//	},
+
 	start: function() {
 		Log.info("Starting module: " + this.name);
-		var self = this;
-		setInterval(function() {
-			self.swatch();
-		}, 864);
+	},
+
+	notificationReceived: function(notification, payload, sender) {
+		if (notification === "CLOCK_SECOND") {
+			var self = this;
+			setInterval(function() {
+				self.swatch();
+			}, 864);
+		}
 	},
 
 	getDom: function() {
