@@ -11,7 +11,6 @@ There are no time zones in Swatch Internet Time; instead, the new time scale of 
 		module: "swatch",
 		position: "top_left",
 		config: {
-			beat: "", 
-			// leave blank or put your custom text inclding <span class=\"beat\"></span>. ex: Swatch+ .beat <span class=\"beat\"></span>
+			beat: "<span class=\"beat\"></span>. ex: Swatch+ .beat <span class=\"beat\"></span>"
 		},
 	}
