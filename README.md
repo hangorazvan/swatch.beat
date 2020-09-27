@@ -1,4 +1,5 @@
 # swatch.beat
+
 Simple Swatch .beat Internet Time MagicMirror2 module
 
 <img src=https://github.com/hangorazvan/swatch.beat/raw/master/preview.png>
@@ -11,6 +12,6 @@ There are no time zones in Swatch Internet Time; instead, the new time scale of 
 		module: "swatch",
 		position: "top_left",
 		config: {
-			beat: "<span class=\"beat\"></span>. ex: Swatch+ .beat <span class=\"beat\"></span>"
+			logo_height: 28
 		},
 	}
