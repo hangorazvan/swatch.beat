@@ -20,15 +20,13 @@ Module.register("swatch", {
 	
 	start: function() {
 		Log.info("Starting module: " + this.name);
-	},
-
-	notificationReceived: function(notification, payload, sender) {
-		if (notification === "CLOCK_SECOND") {
-			var self = this;
-			setInterval(function() {
-				self.swatch();
-			}, 864);
-		}
+		var self = this;
+		setTimeout(function() {
+			self.swatch();
+		}, 864);
+		setInterval(function() {
+			self.swatch();
+		}, 86400);
 	},
 
 	getDom: function() {
@@ -39,7 +37,7 @@ Module.register("swatch", {
 	},
 
 	swatch: function() {
-//	CET Switzerland, Biel Meantime UTC+1
+	//	CET Switzerland, Biel Meantime UTC+1
 		var t = moment().utcOffset(60);
 		var h = t.hours();
 		var m = t.minute();
