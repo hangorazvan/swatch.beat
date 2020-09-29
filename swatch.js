@@ -12,16 +12,16 @@ Module.register("swatch", {
 		logo_height: 28,
 	},
 
-	getScripts: function() {
-		return ["moment.js"];
-	},
+//	getScripts: function() {
+//		return ["moment.js"];
+//	},
 
 	start: function() {
 		Log.info("Starting module: " + this.name);
 		this.swatch();
 		var self = this;
 		setInterval(function() {
-			self.updateDom();
+			self.swatch();
 		}, 86400);
 	},
 
@@ -35,6 +35,7 @@ Module.register("swatch", {
 		this.beats = "@" + this.time;
 		if (this.time <= 9) { this.beats = "@00" + this.time; }
 		else if (this.time <= 99) { this.beats = "@0" + this.time; }
+		this.updateDom();
 	},
 
 	getDom: function() {
