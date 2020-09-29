@@ -12,9 +12,9 @@ Module.register("swatch", {
 		logo_height: 28,
 	},
 
-//	getScripts: function() {
-//		return ["moment.js"];
-//	},
+	getScripts: function() {
+		return ["moment.js"];
+	},
 
 	start: function() {
 		Log.info("Starting module: " + this.name);
