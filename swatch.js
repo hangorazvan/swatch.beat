@@ -18,11 +18,10 @@ Module.register("swatch", {
 
 	start: function() {
 		Log.info("Starting module: " + this.name);
-		this.swatch();
 		var self = this;
 		setInterval(function() {
 			self.swatch();
-		}, 20000);
+		}, 1000);
 	},
 
 	swatch: function() {
@@ -31,10 +30,10 @@ Module.register("swatch", {
 		var h = t.hours();
 		var m = t.minute();
 		var s = t.seconds();
-		this.time = Math.round((h * 3600 + m * 60) / 86.4);
-		this.beats = "@" + this.time;
-		if (this.time <= 9) { this.beats = "@00" + this.time; }
-		else if (this.time <= 99) { this.beats = "@0" + this.time; }
+		time = Math.round((h * 3600 + m * 60) / 86.4);
+		this.beats = "@" + time;
+		if (time <= 9) { this.beats = "@00" + time; }
+		else if (time <= 99) { this.beats = "@0" + time; }
 		this.updateDom();
 	},
 
