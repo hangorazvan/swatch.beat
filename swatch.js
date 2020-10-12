@@ -1,15 +1,15 @@
 /* Magic Mirror
  *
-  * MIT Licensed.
- *
  * Redesigned by Răzvan Cristea
  * for iPad 3 & HD display
+ *
  * https://github.com/hangorazvan
+ * Creative Commons BY-NC-SA 4.0, Romania.
  */
 Module.register("swatch", {
 
 	defaults: {
-		logo_height: 28,
+		logo_height: 28
 	},
 
 	getScripts: function() {
@@ -19,22 +19,9 @@ Module.register("swatch", {
 	start: function() {
 		Log.info("Starting module: " + this.name);
 		var self = this;
-		setInterval(function () {
-			self.swatch();
-		}, 1000);
-	},
-
-	swatch: function() {
-	//	CET Switzerland, Biel Meantime UTC+1
-		var t = moment().utcOffset(60);
-		var h = t.hours();
-		var m = t.minute();
-		var s = t.seconds();
-		time = Math.round((h * 3600 + m * 60) / 86.4);
-		this.beats = "@" + time;
-		if (time <= 9) { this.beats = "@00" + time; }
-		else if (time <= 99) { this.beats = "@0" + time; }
-		this.updateDom();
+		setInterval(function() {
+			self.updateDom();
+		}, 86400);
 	},
 
 	getDom: function() {
@@ -50,7 +37,18 @@ Module.register("swatch", {
 		beat.style.fontSize = this.config.logo_height + "pt";
 		beat.style.fontWeight = "600";
 		beat.className = "beat bright";
-		beat.innerHTML = this.beats;
+
+	//	CET Switzerland, Biel Meantime UTC+1
+		var t = moment().utcOffset(60);
+		var h = t.hours();
+		var m = t.minute();
+		var s = t.seconds();
+		var time = Math.round((h * 3600 + m * 60) / 86.4);
+		var beats = "@" + time;
+		if (time <= 9) { beats = "@00" + time; }
+		else if (time <= 99) { beats = "@0" + time; }
+
+		beat.innerHTML = beats;
 		wrapper.appendChild(beat);
 
 		var beats_logo = document.createElement("span");
