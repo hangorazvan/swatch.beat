@@ -19,7 +19,7 @@ Module.register("swatch", {
 	start: function() {
 		Log.info("Starting module: " + this.name);
 		var self = this;
-		setInterval(function() {
+		setInterval(function () {
 			self.swatch();
 		}, 1000);
 	},
