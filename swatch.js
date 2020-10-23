@@ -19,9 +19,22 @@ Module.register("swatch", {
 	start: function() {
 		Log.info("Starting module: " + this.name);
 		var self = this;
-		setInterval(function() {
-			self.updateDom();
-		}, 86400);
+		setInterval(function () {
+			self.swatch();
+		}, 1000);
+	},
+
+	swatch: function() {
+	//	CET Switzerland, Biel Meantime UTC+1
+		var t = moment().utcOffset(60);
+		var h = t.hours();
+		var m = t.minute();
+		var s = t.seconds();
+		time = Math.round((h * 3600 + m * 60) / 86.4);
+		this.beats = "@" + time;
+		if (time <= 9) { this.beats = "@00" + time; }
+		else if (time <= 99) { this.beats = "@0" + time; }
+		this.updateDom();
 	},
 
 	getDom: function() {
@@ -37,18 +50,7 @@ Module.register("swatch", {
 		beat.style.fontSize = this.config.logo_height + "pt";
 		beat.style.fontWeight = "600";
 		beat.className = "beat bright";
-
-	//	CET Switzerland, Biel Meantime UTC+1
-		var t = moment().utcOffset(60);
-		var h = t.hours();
-		var m = t.minute();
-		var s = t.seconds();
-		var time = Math.round((h * 3600 + m * 60) / 86.4);
-		var beats = "@" + time;
-		if (time <= 9) { beats = "@00" + time; }
-		else if (time <= 99) { beats = "@0" + time; }
-
-		beat.innerHTML = beats;
+		beat.innerHTML = this.beats;
 		wrapper.appendChild(beat);
 
 		var beats_logo = document.createElement("span");
