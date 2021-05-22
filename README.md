@@ -3,6 +3,7 @@
 https://github.com/hangorazvan/swatch
 
 Simple Swatch .beat Internet Time MagicMirror2 module
+<br>This module is no longer maintained, will not have any improvements or bug fixes.
 
 <img src=https://github.com/hangorazvan/swatch.beat/raw/master/preview.png>
 
